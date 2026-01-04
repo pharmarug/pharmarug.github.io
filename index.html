@@ -21,36 +21,40 @@
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
+            background-color: #ffffff;
             height: 100%;
         }
 
-        /* This container will have the water effect */
         .hero-section {
-            background: linear-gradient(rgba(0, 119, 182, 0.8), rgba(2, 62, 138, 0.9)), 
+            background: linear-gradient(rgba(0, 119, 182, 0.85), rgba(2, 62, 138, 0.95)), 
                         url('https://images.unsplash.com/photo-1532187878418-9f1107983cdc?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
+            background-position: center;
             color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
-            cursor: pointer;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
-        h1 { font-size: 2.5em; margin-bottom: 10px; }
-        .subtitle { font-size: 1.2em; opacity: 0.9; }
+        h1 { font-size: 3em; margin-bottom: 10px; letter-spacing: 1px; }
+        .subtitle { font-size: 1.3em; opacity: 0.9; font-weight: 300; }
 
-        /* Modern Table Styling */
-        .event-card {
+        .content-card {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             overflow: hidden;
-            margin-top: -40px; /* Overlap effect */
+            margin-top: -50px; 
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            padding: 30px 30px 10px 30px;
         }
 
         .event-table {
@@ -61,7 +65,7 @@
         .event-table th {
             background-color: var(--pharmarug-blue);
             color: white;
-            padding: 18px;
+            padding: 20px;
             text-align: left;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -71,60 +75,45 @@
         .event-table td {
             padding: 20px;
             border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
         }
 
         .event-table tr:hover {
             background-color: #f1f8ff;
-            transition: 0.3s;
+            transition: background-color 0.3s ease;
+        }
+
+        .resource-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .event-table a {
             color: var(--pharmarug-blue);
             text-decoration: none;
+            font-size: 0.85em;
             font-weight: 600;
-            border: 1px solid var(--pharmarug-blue);
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: 0.2s;
+            border: 1.5px solid var(--pharmarug-blue);
+            padding: 5px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            display: inline-block;
+            white-space: nowrap;
         }
 
         .event-table a:hover {
             background: var(--pharmarug-blue);
             color: white;
+            box-shadow: 0 4px 8px rgba(0,119,182,0.2);
         }
 
-        .hex-cell img {
-            max-width: 50px;
-            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
-            transition: transform 0.3s;
-        }
-
-        .hex-cell img:hover {
-            transform: scale(1.2) rotate(5deg);
-        }
-
-        /* CTA Section */
-        .cta-box {
+        footer {
             text-align: center;
             padding: 40px;
-            margin-top: 40px;
-            background: var(--light-gray);
-            border-radius: 12px;
+            color: #888;
+            font-size: 0.9em;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            margin: 10px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
-
-        .btn-primary { background: var(--pharmarug-blue); color: white; }
-        .btn-twitter { background: #1DA1F2; color: white; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
@@ -133,44 +122,79 @@
         <div class="container">
             <h1>💊 PharmaRUG</h1>
             <p class="subtitle">The Pharma Industry R User Group</p>
-            <p>Promoting R Excellence in Healthcare & Pharmaceuticals</p>
+            <p>Empowering pharmaceutical scientists through open-source R community.</p>
         </div>
     </div>
 
     <div class="container">
-        <div class="event-card">
+        <div class="content-card">
+            <div class="section-header">
+                <h3>📅 Events and Workshops</h3>
+            </div>
             <table class="event-table">
                 <thead>
                     <tr>
-                        <th>Event Title</th>
-                        <th>Year</th>
-                        <th>Materials</th>
-                        <th style="text-align:center">Sticker</th>
+                        <th style="width: 45%;">Event / Workshop Title</th>
+                        <th style="width: 10%;">Year</th>
+                        <th style="width: 45%;">Resources</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Annual Meeting 2025</strong></td>
+                        <td><strong>PharmaRUG Annual Meeting</strong></td>
                         <td>2025</td>
-                        <td><a href="https://pharmarug.github.io/pharmarug-2025/">Website</a></td>
-                        <td class="hex-cell" align="center"><img src="img/2025-sticker.png" alt="2025"></td>
+                        <td>
+                            <div class="resource-links">
+                                <a href="https://pharmarug.github.io/pharmarug-2025/" target="_blank">Event Website</a>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>PharmaSUG Workshop</strong></td>
+                        <td><strong>PharmaSUG R Workshop</strong></td>
+                        <td>2025</td>
+                        <td>
+                            <div class="resource-links">
+                                <a href="https://pharmarug.github.io/pharmasug2025-r-workshop/" target="_blank">Workshop Website</a>
+                                <a href="https://github.com/pharmarug/pharmasug2025-r-workshop" target="_blank">Workshop Code</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>PharmaSUG R Workshop</strong></td>
                         <td>2024</td>
-                        <td><a href="https://github.com/pharmarug/pharmasug2024-r-workshop">Code Repo</a></td>
-                        <td class="hex-cell" align="center"><img src="img/pharmasug-2024-sticker.png" alt="2024"></td>
+                        <td>
+                            <div class="resource-links">
+                                <a href="https://pharmarug.github.io/pharmasug2024-r-workshop/" target="_blank">Workshop Website</a>
+                                <a href="https://github.com/pharmarug/pharmasug2024-r-workshop" target="_blank">Workshop Code</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>PharmaRUG Annual Meeting</strong></td>
+                        <td>2024</td>
+                        <td>
+                            <div class="resource-links">
+                                <a href="https://pharmarug.github.io/pharmarug-2024/" target="_blank">Event Website</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>PharmaRUG Annual Meeting</strong></td>
+                        <td>2023</td>
+                        <td>
+                            <div class="resource-links">
+                                <a href="https://pharmarug.github.io/pharmarug-2023/" target="_blank">Event Website</a>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
-        <div class="cta-box">
-            <h3>Join our growing community</h3>
-            <a href="#" class="btn btn-primary">Join Mailing List</a>
-            <a href="https://twitter.com/PharmaR_UG" class="btn btn-twitter">Follow on X</a>
-        </div>
     </div>
+
+    <footer>
+        &copy; 2026 PharmaRUG | Promoting R Excellence in Pharma.
+    </footer>
 
     <script>
         $(document).ready(function() {
@@ -181,7 +205,7 @@
                     perturbance: 0.04,
                 });
             } catch (e) {
-                console.error(e);
+                console.error("Ripple effect failed to load:", e);
             }
         });
     </script>
